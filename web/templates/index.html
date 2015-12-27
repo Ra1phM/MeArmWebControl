@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="This page allows to control the MeArm robotic arm.">
+    <meta name="author" content="Ralph Marschall">
+    <!-- <link rel="icon" href="../../favicon.ico"> -->
+
+    <title>MeArm WebControl Alpha v0.1</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/custom.css') }}" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <div class="container">
+      <center>
+        <h1>MeArm WebControl</h1>
+        <h5>Use the buttons bellow to control the robotic arm. Have fun!</h5>
+      </center>
+
+      <div class="row controls">
+        <div class="col-md-4 col-md-offset-4">
+        
+          <form class="form-horizontal">
+
+            <!-- Grip Control -->
+            <div class="form-group">
+              <label class="col-md-2 control-label">Grip</label>
+              <div class="col-md-10">
+                <button type="button" class="btn btn-success control-btn" onclick="button_onclick('gripopen')">Open</button>
+                <button type="button" class="btn btn-danger control-btn" onclick="button_onclick('gripclose')">Close</button>
+              </div>
+            </div>
+
+            <!-- Elbow Control -->
+            <div class="form-group">
+              <label class="col-md-2 control-label">Elbow</label>
+              <div class="col-md-10">
+                <button type="button" class="btn btn-success control-btn" onclick="button_onclick('elbowup')">Up</button>
+                <button type="button" class="btn btn-success control-btn" onclick="button_onclick('elbowdown')">Down</button>
+              </div>
+            </div>
+
+            <!-- Shoulder Control -->
+            <div class="form-group">
+              <label class="col-md-2 control-label">Shoulder</label>
+              <div class="col-md-10">
+                <button type="button" class="btn btn-success control-btn" onclick="button_onclick('shoulderforward')">Forward</button>
+                <button type="button" class="btn btn-success control-btn" onclick="button_onclick('shoulderback')">Back</button>
+              </div>
+            </div>
+
+            <!-- Hip Control -->
+            <div class="form-group">
+              <label class="col-md-2 control-label">Hip</label>
+              <div class="col-md-10">
+                <button type="button" class="btn btn-success control-btn" onclick="button_onclick('hipleft')">Left</button>
+                <button type="button" class="btn btn-success control-btn" onclick="button_onclick('hipright')">Right</button>
+              </div>
+            </div>
+            
+          </form>
+        </div>
+      </div>
+
+    </div> <!-- /container -->
+
+
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+
+    <script language="javascript" type="text/javascript">
+      function button_onclick(direction) {
+        $.ajax({ url: '/' + direction });
+      }
+    </script>  
+
+  </body>
+</html>
+
