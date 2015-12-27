@@ -4,7 +4,7 @@
 
 ## 0. How it works
 
-A Python ([Flask][]) web server runs in a [Docker][] container on the Raspberry Pi. The Raspberry should preferably have [HypriotOS][]. The arm's servos are directly connected to the 5V, Ground (GND) and GPIO pins of the Raspberry board.
+A Python ([Flask][]) web server runs in a [Docker][] container on the Raspberry Pi. The Raspberry should preferably have [HypriotOS][Hypriot]. The arm's servos are directly connected to the 5V, Ground (GND) and GPIO pins of the Raspberry board.
 
 ## 1. Setup
 
