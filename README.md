@@ -34,7 +34,7 @@ The Power and Ground pins from all motors can go onto a breadboard and then to t
 
 	git clone https://github.com/Ra1phM/MeArmWebControl.git
 
-Then, change directory and build the image:
+Then, change directory and build the image (It will take a few minutes, relax and stretch your legs):
 
 	cd MeArmWebControl
 	docker build -t rpi-mearm-wb .
@@ -42,7 +42,6 @@ Then, change directory and build the image:
 To start the container:
 
 	docker run --device /dev/mem:/dev/mem --privileged -p 80:5000 -ti rpi-mearm-wb /bin/bash
-	docker run --device /dev/mem:/dev/mem --device /dev/ttyAMA0:/dev/ttyAMA0 --privileged -p 80:5000 -ti rpi-mearm-wb /bin/bash
 
 We launched a docker container from the image we create previously. The port 5000 from the Flask app is forwarded to port 80. `-ti` sends us directly in an interactive terminal inside the running container. It is very important to map `/dev/mem` to the container with privileged access, otherwise the container won't be able to control the pins.
 

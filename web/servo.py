@@ -28,7 +28,8 @@ servos = {}
 class ServoController:
 
 	def __init__(self):
-		os.system('ServoBlaster/user/servod')
+		if os.system('pgrep servod') == 256: # pgrep returns 256 if process doesn't exists
+			os.system('ServoBlaster/user/servod')
 
 	def setAngle(self, servo_id, degrees):
 

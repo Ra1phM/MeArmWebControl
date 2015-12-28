@@ -4,17 +4,10 @@ import servo
 
 app = Flask(__name__)
 
-servoController = servo.ServoController()
-
 GRIP 		= 1 # GPIO 17
 ELBOW 		= 2 # GPIO 18
 SHOULDER 	= 4 # GPIO 22
 HIP			= 5 # GPIO 23
-
-servoController.setAngle(GRIP, 90)
-servoController.setAngle(ELBOW, 0)
-servoController.setAngle(SHOULDER, 25)
-servoController.setAngle(HIP, 0)
 
 # Routes
 
@@ -52,4 +45,13 @@ def perform_arm_command(arm_command):
 	return arm_command
 
 if __name__ == '__main__':
+	servoController = servo.ServoController()
+
+	servoController.setAngle(GRIP, 90)
+	servoController.setAngle(ELBOW, 0)
+	servoController.setAngle(SHOULDER, 25)
+	servoController.setAngle(HIP, 0)
+
 	app.run(host='0.0.0.0', debug=True)
+
+
