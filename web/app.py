@@ -19,10 +19,10 @@ def index():
 def perform_arm_command(arm_command):
 	# Choose the direction of the request
 	if arm_command == 'gripopen':
-		servoController.setAngle(GRIP, 45)
+		servoController.setAngle(GRIP, -90)
         
 	elif arm_command == 'gripclose':
-		servoController.setAngle(GRIP, 90)
+		servoController.setAngle(GRIP, 10)
 
 	elif arm_command == 'elbowup':
 		servoController.incAngle(ELBOW, 10)
@@ -47,8 +47,8 @@ def perform_arm_command(arm_command):
 if __name__ == '__main__':
 	servoController = servo.ServoController()
 
-	servoController.setAngle(GRIP, 90)
-	servoController.setAngle(ELBOW, 0)
+	servoController.setAngle(GRIP, -90)
+	servoController.setAngle(ELBOW, 10)
 	servoController.setAngle(SHOULDER, 25)
 	servoController.setAngle(HIP, 0)
 
