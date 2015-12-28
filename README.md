@@ -1,5 +1,7 @@
 # MeArm WebControl Alpha v0.1 - For Raspberry Pi
 
+**Disclaimer:** This is currently an active work in progress.
+
 [MeArm][], a little robotic arm, is controlled via a web interface on a Raspberry Pi.
 
 ## 0. How it works
@@ -24,6 +26,12 @@ The control pin of the servos goes to the following respective GPIO pins ([Refer
 The Power and Ground pins from all motors can go onto a breadboard and then to the 5V pin and a Ground pin of the Raspberry. (To be validated) Alternatively, you can use a secondary power source to only power up the motors. Just make sure it's 5-6V at 2A.
 
 ### 1.2. Software
+
+**Note:** You can connect to your Hypriot powered Raspberry Pi using `pi` user instead of `root`.
+**Requirement:** You will need your Pi to have an Internet connection to be able to pull the repository and images for docker.
+
+[Hypriot OS][Hypriot] comes already with `git` installed, so just clone this repository in your home folder:
+
 
 - requires Docker
 - Install Servos
