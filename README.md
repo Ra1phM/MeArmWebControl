@@ -18,12 +18,14 @@ First, we must wire up MeArm's servos with the Raspberry Pi. There exists differ
 
 The control pin of the servos goes to the following respective GPIO pins ([Reference here][RPIPins]):
 
-- Grip     => GPIO 17
-- Elbow    => GPIO 18
-- Shoulder => GPIO 22
-- Hip      => GPIO 23
+- Grip     => GPIO 17 (Green)
+- Elbow    => GPIO 18 (Yellow)
+- Shoulder => GPIO 22 (Orange)
+- Hip      => GPIO 23 (Red)
 
-The Power and Ground pins from all motors can go onto a breadboard and then to the 5V pin and a Ground pin of the Raspberry. (To be validated) Alternatively, you can use a secondary power source to only power up the motors. Just make sure it's 5-6V at 2A.
+The Power (Purple) and Ground (Grey) pins from all motors can go onto a breadboard and then to the 5V pin and a Ground pin of the Raspberry. (To be validated) Alternatively, you can use a secondary power source to only power up the motors. Just make sure it's 5-6V at 2A.
+
+![Raspberry Pi B+ Pin setup](RaspberryPi_MeArm_Pins.JPG)
 
 ### 1.2. Software
 
