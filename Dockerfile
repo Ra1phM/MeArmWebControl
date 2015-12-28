@@ -4,6 +4,7 @@ MAINTAINER Ralph Marschall <marschallralph@gmail.com>
 
 # Install dependencies
 RUN apt-get update && apt-get install -y \
+	gcc \
     python \
     python-dev \
     python-pip \
