@@ -5,6 +5,7 @@ MAINTAINER Ralph Marschall <marschallralph@gmail.com>
 # Install dependencies
 RUN apt-get update && apt-get install -y \
 	gcc \
+	make \
     python \
     python-dev \
     python-pip \
@@ -13,7 +14,7 @@ RUN apt-get update && apt-get install -y \
     rm -rf /var/lib/apt/lists/*
 
 # Copy required files
-COPY ServoBlaster /app
+COPY ServoBlaster /app/ServoBlaster
 COPY requirements.txt /app
 COPY web /app
 
@@ -27,9 +28,8 @@ RUN pip install -r requirements.txt
 # unlike the requirements.txt which can be run everywhere.
 RUN pip install rpio
 
-
 # Install ServoBlaster user deamon
-# TODO
+RUN make ServoBlaster/user/servod
 
 # Run Flask App
 # TODO
