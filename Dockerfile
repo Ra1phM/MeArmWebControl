@@ -32,10 +32,7 @@ RUN pip install rpio
 WORKDIR /app/ServoBlaster/user/
 RUN make servod
 
-# Run Flask App
-# TODO
-
 WORKDIR /app
 
 # Define default command
-CMD ["bash"]
+CMD ["./ServoBlaster/user/servod", "python app.py"]

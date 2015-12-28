@@ -1,23 +1,28 @@
 #!/usr/bin/env python
-
 from flask import Flask, render_template, Response
 import servo
 
 app = Flask(__name__)
 
 # Todo: Setup Servo
-grip = servo.ServoController(17)
-grip.setAngle(90)
+# grip = servo.ServoController(17)
+# grip.setAngle(90)
 
-elbow = servo.ServoController(27)
-elbow.setAngle(0)
+# elbow = servo.ServoController(27)
+# elbow.setAngle(0)
 
-shoulder = servo.ServoController(22)
-shoulder.setAngle(25)
+# shoulder = servo.ServoController(22)
+# shoulder.setAngle(25)
 
-hip = servo.ServoController(23)
-hip.setAngle(0)
+# hip = servo.ServoController(23)
+# hip.setAngle(0)
 
+servo = servo.ServoController()
+
+GRIP 		= 1 # GPIO 17
+ELBOW 		= 2 # GPIO 18
+SHOULDER 	= 4 # GPIO 22
+HIP			= 5 # GPIO 23
 
 # Routes
 
@@ -29,28 +34,28 @@ def index():
 def perform_arm_command(arm_command):
 	# Choose the direction of the request
 	if arm_command == 'gripopen':
-		grip.setAngle(45)
+		servo.setAngle(GRIP, 45)
         
 	elif arm_command == 'gripclose':
-		grip.setAngle(90)
+		servo.setAngle(GRIP, 90)
 
 	elif arm_command == 'elbowup':
-		elbow.incAngle(10)
+		servo.incAngle(ELBOW, 10)
 
 	elif arm_command == 'elbowdown':
-		elbow.incAngle(-19)
+		servo.incAngle(ELBOW, -19)
 
 	elif arm_command == 'shoulderback':
-		shoulder.incAngle(-10)
+		servo.incAngle(SHOULDER, -10)
 
 	elif arm_command == 'shoulderforward':
-		shoulder.incAngle(10)
+		servo.incAngle(SHOULDER, 10)
 
 	elif arm_command == 'hipleft':
-		hip.incAngle(-10)
+		servo.incAngle(HIP, -10)
 
 	elif arm_command == 'hipright':
-		hip.incAngle(10)
+		servo.incAngle(HIP, 10)
 
 	return arm_command
 

@@ -39,10 +39,18 @@ Then, change directory and build the image:
 	cd MeArmWebControl
 	docker build -t rpi-mearm-wb .
 
+To start the container:
 
+	docker run -p 80:5000 -ti rpi-mearm-wb /bin/bash
 
-- Install Servos
-- commands
+	docker run --device /dev/mem:/dev/mem --privileged -p 80:5000 -ti rpi-mearm-wb /bin/bash
+	docker run --device /dev/mem:/dev/mem --device /dev/ttyAMA0:/dev/ttyAMA0 --privileged -p 80:5000 -ti rpi-mearm-wb /bin/bash
+
+// Run Servo
+// Run Python app
+
+Now, you can access the web interface at `http://<IP OF RASPBERRY PI>`
+
 - TODO: Make a script that install it automatically
 
 
