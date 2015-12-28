@@ -8,9 +8,9 @@
 
 A Python ([Flask][]) web server runs in a [Docker][] container on the Raspberry Pi. The Raspberry should preferably have [HypriotOS][Hypriot]. The arm's servos are directly connected to the 5V, Ground (GND) and GPIO pins of the Raspberry board.
 
-![Raspberry Pi B+ setup](RaspberryPi_MeArm_Setup.JPG)
+![Raspberry Pi B+ setup](images/RaspberryPi_MeArm_Setup.JPG)
 
-![Simple Web Interface](WebInterface.png)
+![Simple Web Interface](images/WebInterface.png)
 
 ## 1. Setup
 
@@ -29,7 +29,7 @@ The control pin of the servos goes to the following respective GPIO pins ([Refer
 
 The Power (Purple) and Ground (Grey) pins from all motors can go onto a breadboard and then to the 5V pin and a Ground pin of the Raspberry. (To be validated) Alternatively, you can use a secondary power source to only power up the motors. Just make sure it's 5-6V at 2A.
 
-![Raspberry Pi B+ Pin setup](RaspberryPi_MeArm_Pins.JPG)
+![Raspberry Pi B+ Pin setup](images/RaspberryPi_MeArm_Pins.JPG)
 
 ### 1.2. Software
 
