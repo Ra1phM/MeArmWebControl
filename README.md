@@ -10,7 +10,7 @@ A Python ([Flask][]) web server runs in a [Docker][] container on the Raspberry 
 
 ## 1. Setup
 
-The next sections go over the details on how the [MeArm][], Raspberry and software must be configured.
+The next sections go over the details on how the [MeArm][], Raspberry and software must be configured. I assume you know already the basics of the Raspberry and [Docker][].
 
 ### 1.1. Pins
 
@@ -19,7 +19,7 @@ First, we must wire up MeArm's servos with the Raspberry Pi. There exists differ
 The control pin of the servos goes to the following respective GPIO pins ([Reference here][RPIPins]):
 
 - Grip     => GPIO 17
-- Elbow    => GPIO 27
+- Elbow    => GPIO 18
 - Shoulder => GPIO 22
 - Hip      => GPIO 23
 
@@ -41,17 +41,16 @@ Then, change directory and build the image:
 
 To start the container:
 
-	docker run -p 80:5000 -ti rpi-mearm-wb /bin/bash
-
 	docker run --device /dev/mem:/dev/mem --privileged -p 80:5000 -ti rpi-mearm-wb /bin/bash
 	docker run --device /dev/mem:/dev/mem --device /dev/ttyAMA0:/dev/ttyAMA0 --privileged -p 80:5000 -ti rpi-mearm-wb /bin/bash
 
-// Run Servo
-// Run Python app
+We launched a docker container from the image we create previously. The port 5000 from the Flask app is forwarded to port 80. `-ti` sends us directly in an interactive terminal inside the running container. It is very important to map `/dev/mem` to the container with privileged access, otherwise the container won't be able to control the pins.
 
-Now, you can access the web interface at `http://<IP OF RASPBERRY PI>`
+Now you are in the container, to run the python app type:
 
-- TODO: Make a script that install it automatically
+	python app.py
+
+And you are done! You can access the web interface at `http://<IP OF RASPBERRY PI>`
 
 
 
