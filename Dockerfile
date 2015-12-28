@@ -29,10 +29,13 @@ RUN pip install -r requirements.txt
 RUN pip install rpio
 
 # Install ServoBlaster user deamon
-RUN make ServoBlaster/user/servod
+WORKDIR /app/ServoBlaster/user/
+RUN make servod
 
 # Run Flask App
 # TODO
+
+WORKDIR /app
 
 # Define default command
 CMD ["bash"]
