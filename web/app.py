@@ -5,8 +5,8 @@ import servo
 app = Flask(__name__)
 
 GRIP 		= 1 # GPIO 17
-ELBOW 		= 2 # GPIO 18
-SHOULDER 	= 4 # GPIO 22
+SHOULDER 	= 2 # GPIO 22
+ELBOW 		= 4 # GPIO 18
 HIP			= 5 # GPIO 23
 
 # Routes
@@ -25,10 +25,10 @@ def perform_arm_command(arm_command):
 		servoController.setAngle(GRIP, 10)
 
 	elif arm_command == 'elbowup':
-		servoController.incAngle(ELBOW, 10)
+		servoController.incAngle(ELBOW, -10)
 
 	elif arm_command == 'elbowdown':
-		servoController.incAngle(ELBOW, -19)
+		servoController.incAngle(ELBOW, 10)
 
 	elif arm_command == 'shoulderback':
 		servoController.incAngle(SHOULDER, -10)
@@ -37,10 +37,10 @@ def perform_arm_command(arm_command):
 		servoController.incAngle(SHOULDER, 10)
 
 	elif arm_command == 'hipleft':
-		servoController.incAngle(HIP, -10)
+		servoController.incAngle(HIP, 10)
 
 	elif arm_command == 'hipright':
-		servoController.incAngle(HIP, 10)
+		servoController.incAngle(HIP, -10)
 
 	return arm_command
 
@@ -48,9 +48,9 @@ if __name__ == '__main__':
 	servoController = servo.ServoController()
 
 	servoController.setAngle(GRIP, -90)
-	servoController.setAngle(ELBOW, 10)
-	servoController.setAngle(SHOULDER, 25)
-	servoController.setAngle(HIP, 0)
+	servoController.setAngle(ELBOW, -20)
+	servoController.setAngle(SHOULDER, -40)
+	servoController.setAngle(HIP, -25)
 
 	app.run(host='0.0.0.0', debug=True)
 

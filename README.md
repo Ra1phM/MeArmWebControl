@@ -1,6 +1,6 @@
 # MeArm WebControl Alpha v0.1 - For Raspberry Pi
 
-**Disclaimer:** This is currently an active work in progress.
+**Disclaimer:** This is currently an active work in progress. There can be some tuning done with the ServoBlaster values.
 
 [MeArm][], a little robotic arm, is controlled via a web interface on a Raspberry Pi.
 
