@@ -35,4 +35,4 @@ RUN make servod
 WORKDIR /app
 
 # Define default command
-CMD ["./ServoBlaster/user/servod", "python app.py"]
+CMD ["python app.py"]
