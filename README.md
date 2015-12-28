@@ -51,6 +51,14 @@ Now you are in the container, to run the python app type:
 
 And you are done! You can access the web interface at `http://<IP OF RASPBERRY PI>`
 
+### 1.3. Helper scripts
+
+- `StartContainer.sh` runs the above `docker run...` command.
+- In the container call `KillServoBlaster.sh` in order to switch off the MeArm. This is important since, there are sometime a bug, where the servos are somehow buzzing constantly.
+
+
+
+**Have Fun**
 
 
 [MeArm]:	http://mearm.com			"MeArm Official Website"

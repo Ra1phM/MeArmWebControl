@@ -16,6 +16,7 @@ RUN apt-get update && apt-get install -y \
 COPY ServoBlaster /app/ServoBlaster
 COPY requirements.txt /app
 COPY web /app
+COPY KillServoBlaster.sh /app
 
 # Define working directory
 WORKDIR /app
