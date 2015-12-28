@@ -32,8 +32,15 @@ The Power and Ground pins from all motors can go onto a breadboard and then to t
 
 [Hypriot OS][Hypriot] comes already with `git` installed, so just clone this repository in your home folder:
 
+	git clone https://github.com/Ra1phM/MeArmWebControl.git
 
-- requires Docker
+Then, change directory and build the image:
+
+	cd MeArmWebControl
+	docker build -t rpi-mearm-wb .
+
+
+
 - Install Servos
 - commands
 - TODO: Make a script that install it automatically

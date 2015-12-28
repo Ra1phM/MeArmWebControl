@@ -7,9 +7,17 @@ RUN apt-get update && apt-get install -y \
     python \
     python-dev \
     python-pip \
-    python-virtualenv \
+    #python-virtualenv \
     --no-install-recommends && \
     rm -rf /var/lib/apt/lists/*
+
+# Copy required files
+COPY ServoBlaster /app
+COPY requirements.txt /app
+COPY web /app
+
+# Define working directory
+WORKDIR /app
 
 # Install Python packages
 RUN pip install -r requirements.txt
@@ -18,8 +26,12 @@ RUN pip install -r requirements.txt
 # unlike the requirements.txt which can be run everywhere.
 RUN pip install rpio
 
-# Define working directory
-WORKDIR /data
+
+# Install ServoBlaster user deamon
+# TODO
+
+# Run Flask App
+# TODO
 
 # Define default command
 CMD ["bash"]
