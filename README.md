@@ -10,7 +10,7 @@ A Python ([Flask][]) web server runs in a [Docker][] container on the Raspberry 
 
 ![Raspberry Pi B+ setup](RaspberryPi_MeArm_Setup.JPG)
 
-![Simple Web Interface](WebInterface.JPG)
+![Simple Web Interface](WebInterface.png)
 
 ## 1. Setup
 
