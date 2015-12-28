@@ -8,6 +8,10 @@
 
 A Python ([Flask][]) web server runs in a [Docker][] container on the Raspberry Pi. The Raspberry should preferably have [HypriotOS][Hypriot]. The arm's servos are directly connected to the 5V, Ground (GND) and GPIO pins of the Raspberry board.
 
+![Raspberry Pi B+ setup](RaspberryPi_MeArm_Setup.JPG)
+
+![Simple Web Interface](WebInterface.JPG)
+
 ## 1. Setup
 
 The next sections go over the details on how the [MeArm][], Raspberry and software must be configured. I assume you know already the basics of the Raspberry and [Docker][].
