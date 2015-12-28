@@ -1,10 +1,8 @@
 # MeArm WebControl Alpha v0.1 - For Raspberry Pi
 
-**Disclaimer:** This is currently an active work in progress. There can be some tuning done with the ServoBlaster values.
-
 [MeArm][], a little robotic arm, is controlled via a web interface on a Raspberry Pi.
 
-## 0. How it works
+## How it works
 
 A Python ([Flask][]) web server runs in a [Docker][] container on the Raspberry Pi. The Raspberry should preferably have [HypriotOS][Hypriot]. The arm's servos are directly connected to the 5V, Ground (GND) and GPIO pins of the Raspberry board.
 
